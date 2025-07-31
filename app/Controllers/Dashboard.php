@@ -102,13 +102,13 @@ class Dashboard extends BaseController
                 $q = null;
                 if (isset($_SESSION['Answered'])) {
                     $q = $_SESSION['q1'] == 1 ? 1 : 2;
-                    if ($page == 'sstb' && $q == 1  && ($decrypted === 'pajak' || $decrypted === 'form')) {
+                    if ($page == 'sstb' && $q == 1  && ($decrypted === 'pajak')) {
                         return redirect()->back();
-                    } else if ($page == 'stb' && $q == 2  && ($decrypted === 'pajak' || $decrypted === 'form')) {
+                    } else if ($page == 'stb' && $q == 2  && ($decrypted === 'pajak')) {
                         return redirect()->back();
                     }
                 } else {
-                    if ($decrypted === 'pajak' || $decrypted === 'form') {
+                    if ($decrypted === 'pajak') {
                         return redirect()->back();
                     }
                 }

@@ -480,3 +480,16 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia culpa perferendis expedita rem, voluptatum pariatur recusandae fugiat nisi voluptas quae dignissimos repellat tenetur placeat numquam corrupti rerum sapiente. Ea, voluptates.</p>
     </div>
 </div>
+<div class="tab-pane fade" id="v-pills-form" role="tabpanel" tabindex="0">
+  <div id="sewa1" class="p-3">
+    <h5 class="mb-4">Download Files</h5>
+
+    <ul class="list-group" id="fileList">
+    
+    </ul>
+
+    <button id="downloadAllBtn" class="btn btn-primary btn-sm mt-3 float-end">
+      Download All
+    </button>
+  </div>
+</div>

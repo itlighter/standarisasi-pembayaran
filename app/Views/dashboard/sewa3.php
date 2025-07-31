@@ -68,19 +68,17 @@
                                         <a draggable="false" class="nav-link" data-bs-toggle="collapse" data-bs-target="#stb" type="button" role="button" aria-controls="stb" aria-expanded="false">Sewa Tanah dan Bangunan</a>
                                         <div class="collapse ps-4 mt-1 mb-1" id="stb">
                                             <div class="nav flex-column">
-                                                <a draggable="false" href="/dashboard/sewa?page=stb" class="nav-link url">Dokumen Syarat Pembayaran</a>
-                                                <a draggable="false" href="/dashboard/sewa?page=stb&tab=penginputan" class="nav-link url">Penginputan Pembayaran</a>
-                                                <a draggable="false" href="/dashboard/sewa?page=stb&tab=pajak" class="nav-link disabled">Pajak</a>
-                                                <a draggable="false" href="/dashboard/sewa?page=stb&tab=form" class="nav-link disabled">Form-form</a>
+                                                <a draggable="false" class="nav-link url stb-link">Dokumen Syarat Pembayaran</a>
+                                                <a draggable="false" class="nav-link disabled">Pajak</a>
+                                                <a draggable="false" class="nav-link url stb-link">Form-form</a>
                                             </div>
                                         </div>
                                         <a draggable="false" class="nav-link"  data-bs-toggle="collapse" data-bs-target="#sstb" type="button" role="button" aria-controls="sstb" aria-expanded="false">Sewa Selain Tanah dan Bangunan</a>
                                         <div class="collapse ps-4 mt-1 mb-1" id="sstb">
                                             <div class="nav flex-column">
-                                                <a draggable="false" href="/dashboard/sewa?page=sstb" class="nav-link url">Dokumen Syarat Pembayaran</a>
-                                                <a draggable="false" href="/dashboard/sewa?page=sstb&tab=penginputan" class="nav-link url">Penginputan Pembayaran</a>
-                                                <a draggable="false" href="/dashboard/sewa?page=sstb&tab=pajak" class="nav-link disabled">Pajak</a>
-                                                <a draggable="false" href="/dashboard/sewa?page=sstb&tab=form" class="nav-link disabled">Form-form</a>
+                                                <a draggable="false" class="nav-link url sstb-link">Dokumen Syarat Pembayaran</a>
+                                                <a draggable="false" class="nav-link disabled">Pajak</a>
+                                                <a draggable="false" class="nav-link disabled">Form-form</a>
                                             </div>
                                         </div>
                                     </div>

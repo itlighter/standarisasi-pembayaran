@@ -67,18 +67,16 @@
                                         <div class="collapse ps-4 mt-1 mb-1" id="stb">
                                             <div class="nav flex-column">
                                                 <a draggable="false" class="nav-link url">Dokumen Syarat Pembayaran</a>
-                                                <a draggable="false" class="nav-link url">Penginputan Pembayaran</a>
                                                 <a draggable="false" class="nav-link disabled">Pajak</a>
-                                                <a draggable="false" class="nav-link disabled">Form-form</a>
+                                                <a draggable="false" class="nav-link url">Form-form</a>
                                             </div>
                                         </div>
                                         <a draggable="false" class="nav-link"  data-bs-toggle="collapse" data-bs-target="#sstb" type="button" role="button" aria-controls="sstb" aria-expanded="false">Sewa Selain Tanah dan Bangunan</a>
                                         <div class="collapse ps-4 mt-1 mb-1" id="sstb">
                                             <div class="nav flex-column">
                                                 <a draggable="false" class="nav-link url">Dokumen Syarat Pembayaran</a>
-                                                <a draggable="false" class="nav-link url">Penginputan Pembayaran</a>
                                                 <a draggable="false" class="nav-link disabled">Pajak</a>
-                                                <a draggable="false" class="nav-link disabled">Form-form</a>
+                                                <a draggable="false" class="nav-link url">Form-form</a>
                                             </div>
                                         </div>
                                     </div>

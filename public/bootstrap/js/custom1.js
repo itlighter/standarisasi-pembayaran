@@ -20,20 +20,20 @@
 
         // Encrypt using AES-GCM
         const syarat = await encryptDataGCM("syarat", keyHex);
-        const penginputan = await encryptDataGCM("penginputan", keyHex);
+        const form = await encryptDataGCM("form", keyHex);
         const link = $(".url");
-        const stb = link.slice(0, 2);
-        const sstb = link.slice(-2);
+        const stb = $(".stb-link");
+        const sstb = $(".sstb-link");
         const stbHrefs = [
             window.location.origin + "/dashboard/sewa?page=stb&tab=" + encodeURIComponent(syarat),
-            window.location.origin + "/dashboard/sewa?page=stb&tab=" + encodeURIComponent(penginputan)
+            window.location.origin + "/dashboard/sewa?page=stb&tab=" + encodeURIComponent(form)
         ];
         $(stb).each(function(index){
             $(this).attr('href', stbHrefs[index]);
         });
         const sstbHrefs = [
             window.location.origin + "/dashboard/sewa?page=sstb&tab=" + encodeURIComponent(syarat),
-            window.location.origin + "/dashboard/sewa?page=sstb&tab=" + encodeURIComponent(penginputan)
+            window.location.origin + "/dashboard/sewa?page=sstb&tab=" + encodeURIComponent(form)
         ];
         $(sstb).each(function(index){
             $(this).attr('href', sstbHrefs[index]);
@@ -366,6 +366,72 @@ if (window.location.pathname.includes('/dashboard/sewa')) {
         $(".tab-pane").removeClass("show active");
         $("#" + activeTab).addClass("show active");
     }
+
+    const baseUrl = window.location.origin + "/";
+
+    const files = [
+        { name: "Lampiran 1 - Form Pelaksanaan Rapat 1", url: baseUrl + "files/Lampiran 1 - Form Pelaksanaan Rapat 1.xlsx", size: 21605 },
+        { name: "Lampiran 2 - Pejabat level N2 Fungsional yang menerima Dana Penunjang Kinerja 1", url: baseUrl + "files/Lampiran 2 - Pejabat level N2 Fungsional yang menerima Dana Penunjang Kinerja 1.docx", size: 24698 },
+        { name: "Lampiran 3 - Form Rekap Biaya Penunjang Kinerja 1", url: baseUrl + "files/Lampiran 3 - Form Rekap Biaya Penunjang Kinerja 1.xlsx", size: 18932 },
+        { name: "LAMPIRAN BERITA ACARA DOKUMEN TRANSAKSI EXPIRED 30 HARI KERJA", url: baseUrl + "files/LAMPIRAN BERITA ACARA DOKUMEN TRANSAKSI EXPIRED 30 HARI KERJA.docx", size: 18731 },
+        { name: "FORM PERSETUJUAN PENCAIRAN TRR - Lampiran", url: baseUrl + "files/FORM PERSETUJUAN PENCAIRAN TRR - Lampiran.pdf", size: 200938 },
+        { name: "Checklist Dokumen Transaksi Pembayaran 2024 1", url: baseUrl + "files/Checklist Dokumen Transaksi Pembayaran 2024 1.pdf", size: 211073 },
+        { name: "Contoh-Surat-Pernyataan-non npwp 1 2", url: baseUrl + "files/Contoh-Surat-Pernyataan-non npwp 1 2.docx", size: 12569 },
+        { name: "Contoh-Surat-Pernyataan-non pkp 1 13", url: baseUrl + "files/Contoh-Surat-Pernyataan-non pkp 1 13.docx", size: 12569 }
+    ];
+
+    const iconMap = {
+        '.doc': baseUrl + "image/word-icon.png",
+        '.docx': baseUrl + "image/word-icon.png",
+        '.pdf': baseUrl + "image/pdf-icon.png",
+        '.xls': baseUrl + "image/excel-icon.jpg",
+        '.xlsx': baseUrl + "image/excel-icon.jpg"
+    };
+
+    function getIconByExtension(filename) {
+        const ext = '.' + filename.split('.').pop().toLowerCase();
+        return iconMap[ext] || iconMap['default'];
+    }
+
+    function formatBytes(bytes) {
+        if (bytes < 1024) return bytes + ' B';
+        else if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+        else return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+    }
+
+    $(document).ready(function () {
+        const $fileList = $('#fileList');
+
+        $.each(files, function (index, file) {
+            const icon = getIconByExtension(file.url);
+            const $li = $(`
+                <li class="list-group-item d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <img src="${icon}" alt="icon" style="width: 32px; height: 32px; object-fit: contain;" class="me-3">
+                        <div>
+                            <strong>${file.name}</strong><br>
+                            <small class="text-muted">${formatBytes(file.size)}</small>
+                        </div>
+                    </div>
+                    <a class="btn btn-outline-primary btn-sm" href="${file.url}" download="${file.name}">Download</a>
+                </li>
+            `);
+            $fileList.append($li);
+        });
+    });
+
+    $('#downloadAllBtn').on('click', function () {
+        files.forEach((file, index) => {
+            setTimeout(() => {
+                const a = document.createElement('a');
+                a.href = file.url;
+                a.download = file.name;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            }, index * 500); // 500ms delay between each download to avoid browser blocking
+        });
+    });
 }
 
 $("#sidebar-icon").on('click', function(){

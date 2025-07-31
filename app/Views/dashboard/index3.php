@@ -66,17 +66,17 @@
                                         <a draggable="false" class="nav-link" data-bs-toggle="collapse" data-bs-target="#stb" type="button" role="button" aria-controls="stb" aria-expanded="false">Sewa Tanah dan Bangunan</a>
                                         <div class="collapse ps-4 mt-1 mb-1" id="stb">
                                             <div class="nav flex-column">
-                                                <a draggable="false" class="nav-link url">Dokumen Syarat Pembayaran</a>
-                                                <a draggable="false" class="nav-link disabled">Pajak</a>
-                                                <a draggable="false" class="nav-link url">Form-form</a>
+                                                <a draggable="false" href="" class="nav-link url stb-link">Dokumen Syarat Pembayaran</a>
+                                                <a draggable="false" href="" class="nav-link disabled">Pajak</a>
+                                                <a draggable="false" href="" class="nav-link url stb-link">Form-form</a>
                                             </div>
                                         </div>
                                         <a draggable="false" class="nav-link"  data-bs-toggle="collapse" data-bs-target="#sstb" type="button" role="button" aria-controls="sstb" aria-expanded="false">Sewa Selain Tanah dan Bangunan</a>
                                         <div class="collapse ps-4 mt-1 mb-1" id="sstb">
                                             <div class="nav flex-column">
-                                                <a draggable="false" class="nav-link url">Dokumen Syarat Pembayaran</a>
-                                                <a draggable="false" class="nav-link disabled">Pajak</a>
-                                                <a draggable="false" class="nav-link url">Form-form</a>
+                                                <a draggable="false" href="" class="nav-link url sstb-link">Dokumen Syarat Pembayaran</a>
+                                                <a draggable="false" href="" class="nav-link disabled">Pajak</a>
+                                                <a draggable="false" href="" class="nav-link url sstb-link">Form-form</a>
                                             </div>
                                         </div>
                                     </div>

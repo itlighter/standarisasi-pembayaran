@@ -78,7 +78,7 @@
                                             <div class="nav flex-column">
                                                 <a draggable="false" class="nav-link url sstb-link">Dokumen Syarat Pembayaran</a>
                                                 <a draggable="false" class="nav-link disabled">Pajak</a>
-                                                <a draggable="false" class="nav-link disabled">Form-form</a>
+                                                <a draggable="false" class="nav-link url sstb-link">Form-form</a>
                                             </div>
                                         </div>
                                     </div>

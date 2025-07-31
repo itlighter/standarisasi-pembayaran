@@ -92,6 +92,7 @@ $(function() {
       handler: function() {
         collapses['show200-2'].hide();
         collapses['show200-1'].show();
+        radios['q5-1'].checked = true;
       }
     },
     {

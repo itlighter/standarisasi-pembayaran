@@ -87,7 +87,6 @@
 
         // Encrypt using AES-GCM
         const syarat = await encryptDataGCM("syarat", keyHex);
-        const penginputan = await encryptDataGCM("penginputan", keyHex);
         const pajak = await encryptDataGCM("pajak", keyHex);
         const form = await encryptDataGCM("form", keyHex);
 
@@ -98,7 +97,6 @@
             const link = sstbCollapse.find("a[href='#']");
             const hrefs = [
                 "?page=sstb&tab=" + encodeURIComponent(syarat),
-                "?page=sstb&tab=" + encodeURIComponent(penginputan),
                 "?page=sstb&tab=" + encodeURIComponent(pajak),
                 "?page=sstb&tab=" + encodeURIComponent(form)
             ];
@@ -114,7 +112,6 @@
             const link = sstbCollapse.find("a[href='#']");
             const hrefs = [
                 "?page=stb&tab=" + encodeURIComponent(syarat),
-                "?page=stb&tab=" + encodeURIComponent(penginputan),
                 "?page=stb&tab=" + encodeURIComponent(pajak),
                 "?page=stb&tab=" + encodeURIComponent(form)
             ];

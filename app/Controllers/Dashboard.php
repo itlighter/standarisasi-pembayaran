@@ -19,11 +19,11 @@ class Dashboard extends BaseController
             return redirect()->to('/login');
         }
 
-        if (isset($_SESSION['Answered'])){
+        if ((session()->has('Answered'))){
             session()->remove('Answered');
         }
 
-        if (isset($_SESSION['q1'])){
+        if ((session()->has('q1'))){
             $removeSession = ['q1','q2','q3','q4','q5','q6','q7','q8','q9','q10','q11','q12','q13',];
             session()->remove($removeSession);
         }
@@ -41,11 +41,11 @@ class Dashboard extends BaseController
             return redirect()->to('login');
         }
 
-        if (isset($_SESSION['Answered'])){
+        if ((session()->has('Answered'))){
             session()->remove('Answered');
         }
 
-        if (isset($_SESSION['q1'])){
+        if ((session()->has('q1'))){
             $removeSession = ['q1','q2','q3','q4','q5','q6','q7','q8','q9','q10','q11','q12','q13',];
             session()->remove($removeSession);
         }
@@ -63,11 +63,11 @@ class Dashboard extends BaseController
             return redirect()->to('login');
         }
 
-        if(isset($_GET['tab'])){
+        if($this->request->getGet('tab')){
             $keyHex = '603deb1015ca71be2b73aef0857d7781'; // Must match JS
             $key = hex2bin($keyHex);
 
-            $encodedJson = $_GET['tab'] ?? '';
+            $encodedJson = $this->request->getGet('tab') ?? '';
             if (!$encodedJson) {
                 die("❗ No tab parameter provided.");
             }
@@ -98,10 +98,10 @@ class Dashboard extends BaseController
             if ($decrypted === false) {
                 echo "❌ Decryption failed (integrity check failed).";
             } else {
-                $page = $_GET['page'] == 'stb' ? 'stb' : 'sstb';
+                $page = $this->request->getGet('page') == 'stb' ? 'stb' : 'sstb';
                 $q = null;
-                if (isset($_SESSION['Answered'])) {
-                    $q = $_SESSION['q1'] == 1 ? 1 : 2;
+                if (session()->has('Answered')) {
+                    $q = session()->q1 == 1 ? 1 : 2;
                     if ($page == 'sstb' && $q == 1  && ($decrypted === 'pajak')) {
                         return redirect()->back();
                     } else if ($page == 'stb' && $q == 2  && ($decrypted === 'pajak')) {
@@ -123,7 +123,7 @@ class Dashboard extends BaseController
             ];
         }
 
-        if ($_GET['page'] == 'stb') {
+        if ($this->request->getGet('page') == 'stb') {
             $sewaTitle = "Dashboard - Sewa Tanah dan Bangunan";
         } else {
             $sewaTitle = "Dashboard - Sewa Selain Tanah dan Bangunan";

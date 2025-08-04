@@ -24,6 +24,11 @@ class User extends Migration
                 'constraint' => 255,
                 'null' => FALSE
             ],
+            'level' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+                'null' => FALSE
+            ],
             'created_at' => [
                 'type' => 'datetime',
                 'null' => TRUE

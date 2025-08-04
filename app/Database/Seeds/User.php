@@ -11,8 +11,9 @@ class User extends Seeder
     {
         $createdAt = new Time('now', 'Asia/Jakarta');
         $data = [
-            'username' => 'admin12',
-            'password' => 'admin1234',
+            'username' => 'admin',
+            'password' => 'admin',
+            'level' => 'verifikator',
             'created_at' => $createdAt,
         ];
 

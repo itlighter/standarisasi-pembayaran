@@ -22,3 +22,7 @@ setupImgModal("img1", "myModal", "img01", "caption1", 1);
 setupImgModal("img2", "myModal2", "img02", "caption2", 2);
 setupImgModal("img3", "myModal3", "img03", "caption3", 3);
 setupImgModal("img4", "myModal4", "img04", "caption4", 0);
+
+if (window.location.pathname == '/dashboard') {
+    setupImgModal("img3", "myModal3", "img03", "caption3", 0);
+} 

@@ -185,8 +185,13 @@
         <div class="col-md tab-content ps-1 border-start border-dark-subtle" id="v-pills-tabContent">
             <div class="tab-pane fade active show" id="v-pills-informasi" role="tabpanel" aria-labelledby="v-pills-informasi-tab" tabindex="0">
                 <div class="row">
-                    <div class="col-md border-end border-dark-subtle" style="min-height:70vh;">
-                        <span>Isi Informasi 1</span>
+                    <div class="col-md border-end border-dark-subtle text-center" style="min-height:70vh;">
+                        <img class="myImg img-fluid" id="img3" src="<?= base_url('image/infobase.jpeg') ?>" alt="" >
+                        <div id="myModal3" class="modal">
+                            <span class="close">&times;</span>
+                            <img class="modal-content1" id="img03">
+                            <div class="caption" id="caption3"></div>
+                        </div>
                     </div>
                     <div class="col-md border-start border-dark-subtle" style="min-height:70vh;">
                         <img src="" class="mb-5" alt="gambar">
@@ -339,4 +344,5 @@
     <footer class="sticky-bottom bg-primary mx-3" style="height: 30px; margin-top: 25px;"></footer>
 </div>
 <script src="<?= base_url('bootstrap/js/custom1.js') ?>"></script>
+<script src="<?= base_url('bootstrap/js/imgModal.js') ?>"></script>
 <?= $this->endSection() ?>

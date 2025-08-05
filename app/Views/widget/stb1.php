@@ -1,5 +1,5 @@
 <div class="tab-pane fade" id="v-pills-syarat" role="tabpanel" aria-labelledby="v-pills-informasi-tab" tabindex="0">
-    <div id="sewa1">
+    <div class="sewa1">
         <div class="mt-2 mb-2 alert alert-warning text-center" role="alert">
             <span class="collapse-fsize">Pembayaran Sewa Tanah dan Bangunan kantor cabang hanya dapat diajukan oleh BOC</span>
         </div>
@@ -272,7 +272,7 @@
     <div class="mt-2 mb-2 alert alert-warning text-center">
         <span class="collapse-fsize">Pembayaran Sewa Tanah dan Bangunan kantor cabang hanya dapat diajukan oleh BOC</span>
     </div>
-    <div id="sewa1">
+    <div class="sewa1">
         <?php if (isset($_SESSION['Answered'])) : ?>
             <div class="mt-2 bg-secondary border border-1 border-black text-center p-1" style="width: 250px; height: 30px;">
                 <p class="collapse-fsize text-center">Sewa Tanah dan Bangunan</p>
@@ -476,12 +476,12 @@
     </div>
 </div>
 <div class="tab-pane fade" id="v-pills-pajak" role="tabpanel" aria-labelledby="v-pills-input-tab" tabindex="0">
-    <div id="sewa1">
+    <div class="sewa1">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia culpa perferendis expedita rem, voluptatum pariatur recusandae fugiat nisi voluptas quae dignissimos repellat tenetur placeat numquam corrupti rerum sapiente. Ea, voluptates.</p>
     </div>
 </div>
 <div class="tab-pane fade" id="v-pills-form" role="tabpanel" tabindex="0">
-  <div id="sewa1" class="p-3">
+  <div class="sewa1" class="p-3">
     <h5 class="mb-4">Download Files</h5>
 
     <ul class="list-group" id="fileList">

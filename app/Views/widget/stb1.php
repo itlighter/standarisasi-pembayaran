@@ -481,7 +481,7 @@
     </div>
 </div>
 <div class="tab-pane fade" id="v-pills-form" role="tabpanel" tabindex="0">
-  <div class="sewa1" class="p-3">
+  <div class="sewa1 p-3">
     <h5 class="mb-4">Download Files</h5>
 
     <ul class="list-group" id="fileList">

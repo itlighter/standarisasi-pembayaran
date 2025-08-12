@@ -1,8 +1,8 @@
-function setupImgModal(imgId, modalId, modalImgId, captionId, closeIndex) {
-    var $img = $('#' + imgId);
-    var $modal = $('#' + modalId);
-    var $modalImg = $('#' + modalImgId);
-    var $captionText = $('#' + captionId);
+function setupImgModal(closeIndex) {
+    var $img = $('.myImg').eq(closeIndex);
+    var $modal = $('.modalImg').eq(closeIndex);
+    var $modalImg = $('.modal-content').eq(closeIndex);
+    var $captionText = $('.caption').eq(closeIndex);
     var $closeBtn = $('.close').eq(closeIndex);
 
     if ($img.length && $modal.length && $modalImg.length && $captionText.length && $closeBtn.length) {
@@ -18,11 +18,11 @@ function setupImgModal(imgId, modalId, modalImgId, captionId, closeIndex) {
 }
 
 // Setup all modals
-setupImgModal("img1", "myModal", "img01", "caption1", 1);
-setupImgModal("img2", "myModal2", "img02", "caption2", 2);
-setupImgModal("img3", "myModal3", "img03", "caption3", 3);
-setupImgModal("img4", "myModal4", "img04", "caption4", 0);
+setupImgModal(1);
+setupImgModal(2);
+setupImgModal(3);
+setupImgModal(0);
 
 if (window.location.pathname == '/dashboard') {
-    setupImgModal("img3", "myModal3", "img03", "caption3", 0);
+    setupImgModal(0);
 } 

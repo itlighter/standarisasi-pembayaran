@@ -122,11 +122,11 @@
                         <td class="collapse-fsize2">DSP yang dipilih</td>
                         <td class="collapse-fsize2">DSP SEWA</td>
                         <td class="collapse-fsize2">
-                            <img class="myImg" id="img4" src="<?= base_url('image/Picture10.png') ?>" alt="DSP Sewa" style="width:100%;max-width:239px">
-                            <div id="myModal4" class="modal">
+                            <img class="myImg" src="<?= base_url('image/Picture10.png') ?>" alt="DSP Sewa" style="width:100%;max-width:239px">
+                            <div class="modalImg">
                                 <span class="close">&times;</span>
-                                <img class="modal-content" id="img04">
-                                <div class="caption" id="caption4"></div>
+                                <img class="modal-content">
+                                <div class="caption"></div>
                             </div>
                         </td>
                     </tr>
@@ -153,11 +153,11 @@
                         <td class="collapse-fsize2">Metode</td>
                         <td class="collapse-fsize2">3.Amortisasi</td>
                         <td class="collapse-fsize2">
-                            <img class="myImg" id="img1" src="<?= base_url('image/Picture11.jpeg') ?>" height="96" alt="Metode: 3.Amortisasi" style="width:100%;max-width:242px">
-                            <div id="myModal" class="modal">
+                            <img class="myImg" src="<?= base_url('image/Picture11.jpeg') ?>" height="96" alt="Metode: 3.Amortisasi" style="width:100%;max-width:242px">
+                            <div class="modalImg">
                                 <span class="close">&times;</span>
-                                <img class="modal-content" id="img01">
-                                <div class="caption" id="caption1"></div>
+                                <img class="modal-content">
+                                <div class="caption"></div>
                             </div>
                         </td>
                     </tr>
@@ -166,11 +166,11 @@
                         <td class="collapse-fsize2">Rekening BDD</td>
                         <td class="collapse-fsize2">131560001 - BDD Sewa</td>
                         <td class="collapse-fsize2">
-                            <img class="myImg" id="img2" src="<?= base_url('image/Picture12.jpeg') ?>" height="210" alt="BDD Sewa" style="width:100%;max-width:240px">
-                            <div id="myModal2" class="modal">
+                            <img class="myImg" src="<?= base_url('image/Picture12.jpeg') ?>" height="210" alt="BDD Sewa" style="width:100%;max-width:240px">
+                            <div class="modalImg">
                                 <span class="close">&times;</span>
-                                <img class="modal-content" id="img02">
-                                <div class="caption" id="caption2"></div>
+                                <img class="modal-content">
+                                <div class="caption"></div>
                             </div>
                         </td>
                     </tr>
@@ -179,11 +179,11 @@
                         <td class="collapse-fsize2">Nomor GL Amortisasi/Alokasi beban</td>
                         <td class="collapse-fsize2">PL60120 - Sewa Gedung</td>
                         <td class="collapse-fsize2">
-                            <img class="myImg" id="img3" src="<?= base_url('image/Picture13.jpeg') ?>" height="119" alt="Nomor GL: PL60120 - Sewa Gedung"  style="width:100%;max-width:212px">
-                            <div id="myModal3" class="modal">
+                            <img class="myImg" src="<?= base_url('image/Picture13.jpeg') ?>" height="119" alt="Nomor GL: PL60120 - Sewa Gedung"  style="width:100%;max-width:212px">
+                            <div class="modalImg">
                                 <span class="close">&times;</span>
-                                <img class="modal-content" id="img03">
-                                <div class="caption" id="caption3"></div>
+                                <img class="modal-content">
+                                <div class="caption"></div>
                             </div>
                         </td>
                     </tr>

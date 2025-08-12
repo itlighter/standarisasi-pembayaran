@@ -18,10 +18,10 @@ function setupImgModal(closeIndex) {
 }
 
 // Setup all modals
+setupImgModal(0);
 setupImgModal(1);
 setupImgModal(2);
 setupImgModal(3);
-setupImgModal(0);
 
 if (window.location.pathname == '/dashboard') {
     setupImgModal(0);

@@ -224,15 +224,6 @@ $('[data-bs-toggle="popover"]').each(function() {
     new bootstrap.Popover(this);
 });
 
-// Collapse mapping for sidebar pills and submenus
-var sidebarMenus = [
-    { pill: "v-pills-informasi-tab", collapse: "submenu-informasi" },
-    { pill: "v-pills-petunjuk-tab", collapse: "submenu-petunjuk" },
-    { pill: "v-pills-perpajakan-tab", collapse: "submenu-perpajakan" },
-    { pill: "v-pills-open-tab", collapse: "submenu-open" },
-    { pill: "v-pills-buktipotong-tab", collapse: "submenu-buktipotong" }
-];
-
 $("button[data-element='menu']").on("click", function () {
     let getId = $(this).attr('id');
     let getTabId = getId.slice(0, -4);
@@ -246,28 +237,6 @@ $("button[data-element='menu']").on("click", function () {
     $(tabId).siblings('.tab-pane').removeClass('show active');
     $(tabId).addClass('show active');
 });
-
-// var collapseInstances = {};
-// $.each(sidebarMenus, function (_, menu) {
-//     var $pillEl = $("#" + menu.pill + '[data-bs-toggle="pill"]');
-//     var $collapseEl = $("#" + menu.collapse);
-//     if ($pillEl.length && $collapseEl.length) {
-//         $pillEl.on("click", function () {
-//             $(this).siblings('.nav-link').removeClass('active');
-//             var getCollapseId = $(this).attr('aria-controls');
-//             getCollapseId = getCollapseId.substring(getCollapseId.indexOf("pills-") + 6);
-//             $(this).siblings('div.collapse').not("#submenu-" + getCollapseId).removeClass('show');
-//             if(!$(this).siblings().find('.text-white').parent().hasClass('active')){
-//                 $(this).siblings().find('.text-white').removeClass('text-white');
-//             }
-//             if($(this).parent().siblings().last().find('.active').length > 1) {
-//                 $(this).parent().siblings().last().find('.active').first().removeClass('active show');
-//             }
-//             $(this).next().toggleClass('show');
-//             $(this).addClass('active');
-//         });
-//     }
-// });
 
 // Handle active class for sidebar nav-links
 $('.nav-link[data-bs-toggle="collapse"]').on('click', function() {
@@ -311,39 +280,6 @@ function encryptData(data) {
     encrypt.setPublicKey(publicKey);
     return encrypt.encrypt(data);
 }
-
-// Sidebar hide/show logic
-let sidebarHideTimer;
-
-// $("#v-pills-tab").on('mouseleave', function(e){
-//     var elementOffset = $(this).offset();
-//     var elementWidth = $(this).width();
-//     var mouseX = e.pageX;
-//     var ini = this;
-//     if (mouseX <= elementOffset.left) {
-//         sidebarHideTimer = setTimeout(function() {
-//             $(ini).hide();
-//             $(ini).parent().prev().show();
-//             // $(ini).parent().prev().css('padding-left', '5px');
-//             // $("#v-pills-tabContent").css('margin-left', '35px');
-//             // $("#tab").css('margin-left', '35px');
-//         }, 1500);
-//     } else if (mouseX >= (elementOffset.left + elementWidth)) {
-//         sidebarHideTimer = setTimeout(function() {
-//             $(ini).hide();
-//             $(ini).parent().prev().show();
-//             $(ini).parent().prev().css('padding-left', '5px');
-//             $("#v-pills-tabContent").css('margin-left', '35px');
-//             $("#tab").css('margin-left', '35px');
-//         }, 500);
-//     }
-// }).on('mouseenter', function() {
-//     // Reset the timer when mouse enters
-//     if (sidebarHideTimer) {
-//         clearTimeout(sidebarHideTimer);
-//         sidebarHideTimer = null;
-//     }
-// });
 
 function getUrlParameter(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
@@ -426,7 +362,7 @@ if (window.location.pathname.includes('/dashboard/sewa')) {
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
-            }, index * 500); // 500ms delay between each download to avoid browser blocking
+            }, index * 500);
         });
     });
 }

@@ -32,7 +32,7 @@ class Dashboard extends BaseController
             'title' => 'Dashboard'
         ];
 
-        return view('dashboard/index3', $data);
+        return view('dashboard/index', $data);
     }
 
     public function petunjukSewa()
@@ -54,7 +54,7 @@ class Dashboard extends BaseController
             'title' => 'Petunjuk - Sewa'
         ];
 
-        return view('dashboard/sewa3', $data);
+        return view('dashboard/sewa', $data);
     }
 
     public function sewa()
@@ -134,7 +134,7 @@ class Dashboard extends BaseController
             'jsonData' => $jsondata
         ];
 
-        return view('/dashboard/sewa/index3', $data);
+        return view('/dashboard/sewa/index', $data);
     }
 
     public function sewaQuestion()

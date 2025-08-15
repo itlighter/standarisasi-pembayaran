@@ -60,7 +60,12 @@
                                     </div>
                                 <?php endif; ?>
                                 <div class="nav-link active d-flex align-items-center justify-content-between" id="panduan" data-bs-toggle="collapse" data-bs-target="#bantuan" type="button" role="button" aria-controls="bantuan" aria-expanded="false">
-                                    <a draggable="false" href="<?= isset($_SESSION['Answered']) ? base_url('/dashboard/petunjuk/sewa') : ''; ?>" class="link-stretched text-decoration-none flex-grow-1 change text-white"><?= isset($_SESSION['Answered']) ? 'Dengan Bantuan' : 'Tanpa Bantuan'; ?></a>
+                                    <a draggable="false"
+                                        <?php if (isset($_SESSION['Answered'])) : ?>
+                                            href="<?= base_url('dashboard/petunjuk/sewa') ?>"
+                                            onclick="event.stopPropagation(); window.location=this.href;"
+                                        <?php endif; ?>
+                                        class="link-stretched text-decoration-none flex-grow-1 change text-white"><?= isset($_SESSION['Answered']) ? 'Dengan Bantuan' : 'Tanpa Bantuan'; ?></a>
                                     <a data-bs-toggle="popover" role="button" data-bs-html="true" data-bs-trigger="hover" data-bs-title="<strong>Petunjuk Sewa <?= isset($_SESSION['Answered']) ? 'Dengan Bantuan' : 'Tanpa Bantuan'; ?></strong>" data-bs-content="Isi" class="icon-link link-warning">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle focusCollapse" viewBox="0 0 16 16">
                                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>

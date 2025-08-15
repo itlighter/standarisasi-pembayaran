@@ -70,38 +70,42 @@
                                 </div>
                                 <div class="collapse show ps-4 mt-1 mb-1" id="bantuan">
                                     <div class="nav flex-column">
-                                        <a class="nav-link <?= ($_GET['page'] == 'stb') ? 'active' : ''; ?>" data-bs-toggle="collapse" data-bs-target="#stb" type="button" role="button" aria-controls="stb" aria-expanded="false">Sewa Tanah dan Bangunan</a>
-                                        <div class="collapse <?= ($_GET['page'] == 'stb') ? 'show' : ''; ?> ps-4 mt-1 mb-1" id="stb">
-                                            <div class="nav flex-column">
-                                                <?php if ($_GET['page'] == 'stb') : ?>
-                                                    <a draggable="false" class="nav-link <?= !isset($_GET['tab']) || $jsonData['tab'] == 'syarat' ? 'active' : ''; ?>" data-bs-toggle="pill" data-bs-target="#v-pills-syarat" type="button" role="tab" aria-controls="v-pills-syarat" aria-selected="false">Dokumen Syarat Pembayaran</a>
-                                                    <!-- <a draggable="false" class="nav-link <?= isset($_GET['tab']) && $jsonData['tab'] == 'penginputan' ? 'active' : ''; ?>" data-bs-toggle="pill" data-bs-target="#v-pills-penginputan" type="button" role="tab" aria-controls="v-pills-penginputan" aria-selected="false">Penginputan Pembayaran</a> -->
-                                                    <a draggable="false" class="nav-link <?= (!isset($_SESSION['Answered']) || (isset($_SESSION['Answered']) && session()->q1 == 2)) ? 'disabled' : ''; ?> <?= isset($_GET['tab']) && isset($_SESSION['Answered']) && session()->q1 == 1 && $jsonData['tab'] == 'pajak' ? 'active' : ''; ?>" data-bs-toggle="pill" data-bs-target="#v-pills-pajak" type="button" role="tab" aria-controls="v-pills-pajak" aria-selected="false">Pajak</a>
-                                                    <a draggable="false" class="nav-link <?= (isset($_SESSION['Answered']) && session()->q1 == 2) ? 'disabled' : ''; ?> <?= (!isset($_SESSION['Answered']) && $jsonData['tab'] == 'form') || (isset($_GET['tab']) && isset($_SESSION['Answered']) && session()->q1 == 1 && $jsonData['tab'] == 'form') ? 'active' : ''; ?>" data-bs-toggle="pill" data-bs-target="#v-pills-form" type="button" role="tab" aria-controls="v-pills-form" aria-selected="false">Form-form</a>
-                                                <?php elseif ($_GET['page'] == 'sstb') : ?>
-                                                    <a draggable="false" href="#" class="nav-link">Dokumen Syarat Pembayaran</a>
-                                                    <!-- <a draggable="false" href="#" class="nav-link">Penginputan Pembayaran</a> -->
-                                                    <a draggable="false" href="#" class="nav-link  <?= (!isset($_SESSION['Answered']) || (isset($_SESSION['Answered']) && session()->q1 == 2)) ? 'disabled' : ''; ?>">Pajak</a>
-                                                    <a draggable="false" href="#" class="nav-link  <?= (isset($_SESSION['Answered']) && session()->q1 == 2) ? 'disabled' : ''; ?>">Form-form</a>
-                                                <?php endif; ?>
+                                        <?php if (((isset($_SESSION['q1']) && $_SESSION['q1'] == 1)) || !isset($_SESSION['Answered'])) : ?>
+                                            <a class="nav-link <?= ($_GET['page'] == 'stb') ? 'active' : ''; ?>" data-bs-toggle="collapse" data-bs-target="#stb" type="button" role="button" aria-controls="stb" aria-expanded="false">Sewa Tanah dan Bangunan</a>
+                                            <div class="collapse <?= ($_GET['page'] == 'stb') ? 'show' : ''; ?> ps-4 mt-1 mb-1" id="stb">
+                                                <div class="nav flex-column">
+                                                    <?php if ($_GET['page'] == 'stb') : ?>
+                                                        <a draggable="false" class="nav-link <?= !isset($_GET['tab']) || $jsonData['tab'] == 'syarat' ? 'active' : ''; ?>" data-bs-toggle="pill" data-bs-target="#v-pills-syarat" type="button" role="tab" aria-controls="v-pills-syarat" aria-selected="false">Dokumen Syarat Pembayaran</a>
+                                                        <!-- <a draggable="false" class="nav-link <?= isset($_GET['tab']) && $jsonData['tab'] == 'penginputan' ? 'active' : ''; ?>" data-bs-toggle="pill" data-bs-target="#v-pills-penginputan" type="button" role="tab" aria-controls="v-pills-penginputan" aria-selected="false">Penginputan Pembayaran</a> -->
+                                                        <a draggable="false" class="nav-link <?= (!isset($_SESSION['Answered']) || (isset($_SESSION['Answered']) && session()->q1 == 2)) ? 'disabled' : ''; ?> <?= isset($_GET['tab']) && isset($_SESSION['Answered']) && session()->q1 == 1 && $jsonData['tab'] == 'pajak' ? 'active' : ''; ?>" data-bs-toggle="pill" data-bs-target="#v-pills-pajak" type="button" role="tab" aria-controls="v-pills-pajak" aria-selected="false">Pajak</a>
+                                                        <a draggable="false" class="nav-link <?= (isset($_SESSION['Answered']) && session()->q1 == 2) ? 'disabled' : ''; ?> <?= (!isset($_SESSION['Answered']) && $jsonData['tab'] == 'form') || (isset($_GET['tab']) && isset($_SESSION['Answered']) && session()->q1 == 1 && $jsonData['tab'] == 'form') ? 'active' : ''; ?>" data-bs-toggle="pill" data-bs-target="#v-pills-form" type="button" role="tab" aria-controls="v-pills-form" aria-selected="false">Form-form</a>
+                                                    <?php elseif ($_GET['page'] == 'sstb') : ?>
+                                                        <a draggable="false" href="#" class="nav-link">Dokumen Syarat Pembayaran</a>
+                                                        <!-- <a draggable="false" href="#" class="nav-link">Penginputan Pembayaran</a> -->
+                                                        <a draggable="false" href="#" class="nav-link  <?= (!isset($_SESSION['Answered']) || (isset($_SESSION['Answered']) && session()->q1 == 2)) ? 'disabled' : ''; ?>">Pajak</a>
+                                                        <a draggable="false" href="#" class="nav-link  <?= (isset($_SESSION['Answered']) && session()->q1 == 2) ? 'disabled' : ''; ?>">Form-form</a>
+                                                    <?php endif; ?>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <a class="nav-link <?= ($_GET['page'] == 'sstb') ? 'active' : ''; ?>"  data-bs-toggle="collapse" data-bs-target="#sstb" type="button" role="button" aria-controls="sstb" aria-expanded="false">Sewa Selain Tanah dan Bangunan</a>
-                                        <div class="collapse <?= ($_GET['page'] == 'sstb') ? 'show' : ''; ?> ps-4 mt-1 mb-1" id="sstb">
-                                            <div class="nav flex-column">
-                                                <?php if ($_GET['page'] == 'sstb') : ?>
-                                                    <a draggable="false" class="nav-link <?= !isset($_GET['tab']) || $jsonData['tab'] == 'syarat' ? 'active' : ''; ?>" data-bs-toggle="pill" data-bs-target="#v-pills-syarat" type="button" role="tab" aria-controls="v-pills-syarat" aria-selected="false">Dokumen Syarat Pembayaran</a>
-                                                    <!-- <a draggable="false" class="nav-link <?= isset($_GET['tab']) && $jsonData['tab'] == 'penginputan' ? 'active' : ''; ?>" data-bs-toggle="pill" data-bs-target="#v-pills-penginputan" type="button" role="tab" aria-controls="v-pills-penginputan" aria-selected="false">Penginputan Pembayaran</a> -->
-                                                    <a draggable="false" class="nav-link <?= (!isset($_SESSION['Answered']) || (isset($_SESSION['Answered']) && session()->q1 == 1)) ? 'disabled' : ''; ?> <?= isset($_GET['tab']) && isset($_SESSION['Answered']) && session()->q1 == 2 && $jsonData['tab'] == 'pajak' ? 'active' : ''; ?>" data-bs-toggle="pill" data-bs-target="#v-pills-pajak" type="button" role="tab" aria-controls="v-pills-pajak" aria-selected="false">Pajak</a>
-                                                <a draggable="false" class="nav-link <?= (isset($_SESSION['Answered']) && session()->q1 == 1) ? 'disabled' : ''; ?> <?= (!isset($_SESSION['Answered']) && $jsonData['tab'] == 'form') || (isset($_GET['tab']) && isset($_SESSION['Answered']) && session()->q1 == 2 && $jsonData['tab'] == 'form') ? 'active' : ''; ?>" data-bs-toggle="pill" data-bs-target="#v-pills-form" type="button" role="tab" aria-controls="v-pills-form" aria-selected="false">Form-form</a>
-                                                <?php elseif ($_GET['page'] == 'stb') : ?>
-                                                    <a draggable="false" href="#" class="nav-link">Dokumen Syarat Pembayaran</a>
-                                                    <!-- <a draggable="false" href="#" class="nav-link">Penginputan Pembayaran</a> -->
-                                                    <a draggable="false" href="#" class="nav-link <?= (!isset($_SESSION['Answered']) || (isset($_SESSION['Answered']) && session()->q1 == 1)) ? 'disabled' : ''; ?>">Pajak</a>
-                                                    <a draggable="false" href="#" class="nav-link <?= (isset($_SESSION['Answered']) && session()->q1 == 1) ? 'disabled' : ''; ?>">Form-form</a>
-                                                <?php endif; ?>
+                                        <?php endif; ?>
+                                        <?php if (((isset($_SESSION['q1']) && $_SESSION['q1'] == 2)) || !isset($_SESSION['Answered'])) : ?>
+                                            <a class="nav-link <?= ($_GET['page'] == 'sstb') ? 'active' : ''; ?>"  data-bs-toggle="collapse" data-bs-target="#sstb" type="button" role="button" aria-controls="sstb" aria-expanded="false">Sewa Selain Tanah dan Bangunan</a>
+                                            <div class="collapse <?= ($_GET['page'] == 'sstb') ? 'show' : ''; ?> ps-4 mt-1 mb-1" id="sstb">
+                                                <div class="nav flex-column">
+                                                    <?php if ($_GET['page'] == 'sstb') : ?>
+                                                        <a draggable="false" class="nav-link <?= !isset($_GET['tab']) || $jsonData['tab'] == 'syarat' ? 'active' : ''; ?>" data-bs-toggle="pill" data-bs-target="#v-pills-syarat" type="button" role="tab" aria-controls="v-pills-syarat" aria-selected="false">Dokumen Syarat Pembayaran</a>
+                                                        <!-- <a draggable="false" class="nav-link <?= isset($_GET['tab']) && $jsonData['tab'] == 'penginputan' ? 'active' : ''; ?>" data-bs-toggle="pill" data-bs-target="#v-pills-penginputan" type="button" role="tab" aria-controls="v-pills-penginputan" aria-selected="false">Penginputan Pembayaran</a> -->
+                                                        <a draggable="false" class="nav-link <?= (!isset($_SESSION['Answered']) || (isset($_SESSION['Answered']) && session()->q1 == 1)) ? 'disabled' : ''; ?> <?= isset($_GET['tab']) && isset($_SESSION['Answered']) && session()->q1 == 2 && $jsonData['tab'] == 'pajak' ? 'active' : ''; ?>" data-bs-toggle="pill" data-bs-target="#v-pills-pajak" type="button" role="tab" aria-controls="v-pills-pajak" aria-selected="false">Pajak</a>
+                                                    <a draggable="false" class="nav-link <?= (isset($_SESSION['Answered']) && session()->q1 == 1) ? 'disabled' : ''; ?> <?= (!isset($_SESSION['Answered']) && $jsonData['tab'] == 'form') || (isset($_GET['tab']) && isset($_SESSION['Answered']) && session()->q1 == 2 && $jsonData['tab'] == 'form') ? 'active' : ''; ?>" data-bs-toggle="pill" data-bs-target="#v-pills-form" type="button" role="tab" aria-controls="v-pills-form" aria-selected="false">Form-form</a>
+                                                    <?php elseif ($_GET['page'] == 'stb') : ?>
+                                                        <a draggable="false" href="#" class="nav-link">Dokumen Syarat Pembayaran</a>
+                                                        <!-- <a draggable="false" href="#" class="nav-link">Penginputan Pembayaran</a> -->
+                                                        <a draggable="false" href="#" class="nav-link <?= (!isset($_SESSION['Answered']) || (isset($_SESSION['Answered']) && session()->q1 == 1)) ? 'disabled' : ''; ?>">Pajak</a>
+                                                        <a draggable="false" href="#" class="nav-link <?= (isset($_SESSION['Answered']) && session()->q1 == 1) ? 'disabled' : ''; ?>">Form-form</a>
+                                                    <?php endif; ?>
+                                                </div>
                                             </div>
-                                        </div>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             </div>
